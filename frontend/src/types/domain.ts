@@ -1,0 +1,9 @@
+export interface User{id:number;name:string;email:string;role:string}
+export interface Instrument{id:number;code:string;name:string;serial:string;unit:string;lower:number;upper:number}
+export interface Dataset{id:number;name:string;reference_id:number;candidate_id:number;source_file:string;note:string;row_count:number}
+export interface Reading{id:number;dataset_id:number;sample_code:string;reference_value:number;candidate_value:number}
+export interface Point{code:string;x:number;y:number;mean:number;diff:number}
+export interface Result{n:number;intercept:number;slope:number;intercept_ci:number[];slope_ci:number[];bias:number;sd_difference:number;loa_lower:number;loa_upper:number;bias_ci:number[];lower_ci:number[];upper_ci:number[];correlation:number;spread_ratio:number;heteroscedastic_warning:boolean;bootstrap_success:number;bootstrap_failed:number;bootstrap_seed:number;fingerprint:string;x_range:number[];y_range:number[];config:{lambda_ratio:number;allowance:number;range_low:number;range_high:number;bootstrap_count:number};raw_eligible:boolean;instrument_codes:string[];points:Point[]}
+export interface Run{id:number;name:string;dataset_id:number;lambda_ratio:number;allowance:number;range_low:number;range_high:number;bootstrap_count:number;status:string;error:string;created_at:string;result:Partial<Result>}
+export interface Qualification{id:number;title:string;run_id:number;mode:string;scope_low:number;scope_high:number;note:string;status:string;approved_by:string;created_at:string}
+export interface Audit{id:number;actor:string;action:string;status_code:number;created_at:string}

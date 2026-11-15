@@ -1,0 +1,1 @@
+import {request} from './client';import type {Reading} from '../types/domain';export const getReadings=(id:number,search='',offset=0)=>request<{total:number;rows:Reading[]}>(`/readings?dataset_id=${id}&search=${encodeURIComponent(search)}&offset=${offset}&limit=20`);

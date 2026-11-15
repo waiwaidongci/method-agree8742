@@ -1,0 +1,1 @@
+import {request,post} from './client';import type {Instrument} from '../types/domain';export const getInstruments=()=>request<Instrument[]>('/instruments');export const createInstrument=(data:unknown)=>post<Instrument>('/instruments',data);
